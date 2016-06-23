@@ -7,10 +7,7 @@ RUN apt-get update && apt-get -y install apache2 subversion libapache2-svn
 RUN a2enmod dav && a2enmod dav_lock && a2enmod dav_fs && a2enmod authnz_ldap
 
 #Create /etc/apache2/conf-available/svn.conf
-#<Location /svn>
-#DAV svn
-#SVNParentPath /var/svn
-#</Location>
+ADD https://raw.githubusercontent.com/iwanttobefreak/docker-svnapache/master/svn.conf /etc/apache2/conf-available/
 
 #Create SVN config directory
 RUN mkdir /var/svn && chown -R www-data:root /var/svn
