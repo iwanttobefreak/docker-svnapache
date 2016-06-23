@@ -4,7 +4,7 @@ FROM debian
 RUN apt-get update && apt-get -y install apache2 subversion libapache2-svn
 
 #Enable Subversion in Apache
-RUN a2enmod dav && a2enmod dav_lock && a2enmod dav_fs
+RUN a2enmod dav && a2enmod dav_lock && a2enmod dav_fs && a2enmod authnz_ldap
 
 #Create /etc/apache2/conf-available/svn.conf
 #<Location /svn>
