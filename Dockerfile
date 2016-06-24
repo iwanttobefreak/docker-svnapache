@@ -16,7 +16,7 @@ ADD https://raw.githubusercontent.com/iwanttobefreak/docker-svnapache/master/000
 RUN mkdir /var/svn && chown -R www-data:root /var/svn
 
 #Create SVN repository
-RUN svnadmin create /var/svn
+RUN svnadmin create /var/svn/proyecto1
 
 #Activate SVN config
 RUN a2enconf svn
